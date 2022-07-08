@@ -2,5 +2,23 @@
   "dependencies": {
     "express": "^4.18.1",
     "mongoose": "^6.4.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "nosql-challenge",
+  "description": "NoSQL-social-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browniecharl/NoSQL-Challenge.git"
+  },
+  "author": "Robert Velez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/browniecharl/NoSQL-Challenge/issues"
+  },
+  "homepage": "https://github.com/browniecharl/NoSQL-Challenge#readme"
 }
