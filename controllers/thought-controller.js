@@ -68,11 +68,17 @@ const thoughtController = {
     },
     deleteReaction({ params }, res) {
         Thought.findOneAndUpdate(
-           { _id: params.id },
-           { $pull: { reactionID:  params.reactionID} } ,
-           { new: true }
+           { _id: params.thoughtID },
+           { $pull: { reactions: {reactionId: params.reactionId}}},
+           { new: true, runValidators: true }
          )
-         .then(dbThoughtData => res.json(dbThoughtData))
+         .then(dbThoughtData => {
+            if (!dbThoughtData) {
+                res.status(404).json({ message: 'Reaction data is incorrect' });
+                return;
+            }
+            res.json(dbThoughtData);
+         })
          .catch(err => res.json(err));
        }
 }
